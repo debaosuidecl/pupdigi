@@ -91,7 +91,7 @@ const proxies = [
   10904
 ];
 
-const NUM_BROWSERS = 10;
+const NUM_BROWSERS = 5;
 const NUM_PAGES = 1;
 // get randomized indexes with shuffle
 
