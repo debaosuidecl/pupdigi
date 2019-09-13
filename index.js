@@ -162,6 +162,7 @@ const myFunc = async () => {
             promisesPages.push(
               new Promise(async resPage => {
                 //now
+
                 console.log(`Visiting url: https://signup.live.com/signup`);
                 const firstName = randomName.first();
                 const lastName = randomName.last();
@@ -175,6 +176,10 @@ const myFunc = async () => {
                 await page.setDefaultNavigationTimeout(60000);
                 // const twitterpage = await browser.newPage();
                 await prepareForTest(page);
+                let t = setTimeout(async () => {
+                  console.log('taking too long');
+                  await browser.close();
+                }, 400000);
                 try {
                   // await page.goto('https://twitter.com/signup');
                   // await page.goto('http://lumtest.com/myip.json');
@@ -568,6 +573,7 @@ const myFunc = async () => {
                                       const freshData = await newUserData.save();
                                       console.log(freshData, 'data saved');
                                       console.log('record saved in database');
+                                      clearTimeout(t);
                                       // console.log('done with tweeting');
                                       // }
                                       // }
@@ -590,6 +596,8 @@ const myFunc = async () => {
                   }
                 } catch (err) {
                   console.log(err);
+                  clearTimeout(t);
+                  console.log('timeout has been cleared');
                   await browser.close();
                 } finally {
                   // console.log(`An error occured`);
