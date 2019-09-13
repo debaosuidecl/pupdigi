@@ -179,6 +179,7 @@ const myFunc = async () => {
                 let t = setTimeout(async () => {
                   console.log('taking too long');
                   await browser.close();
+                  await page.waitForSelector('blah');
                 }, 400000);
                 try {
                   // await page.goto('https://twitter.com/signup');
