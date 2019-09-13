@@ -144,7 +144,7 @@ const myFunc = async () => {
 
           console.log(proxies[shuffler[numBrowser]]);
           const browser = await puppeteer.launch({
-            headless: true,
+            headless: false,
             // slowMo: 100,
             ignoreHTTPSErrors: true,
             ignoreDefaultArgs: ['--enable-automation'],
@@ -268,6 +268,7 @@ const myFunc = async () => {
                   await page.click('#iSignupAction');
 
                   await page.waitForNavigation();
+                  console.log('navigation after signup on outlook');
                   const page2 = await browser.newPage();
                   await prepareForTest(page2);
                   await page2.setDefaultNavigationTimeout(60000);
