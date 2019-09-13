@@ -632,7 +632,7 @@ const shouldUpdateEmail = async () => {
       console.log('safe');
     }
 
-    setTimeout(shouldUpdateEmail, 10000);
+    setTimeout(shouldUpdateEmail, 20000);
     // console.log(response);
     //
   } catch (error) {
@@ -647,5 +647,5 @@ connectDB();
 app.listen(PORT, () => {
   console.log('listening on PORT ', PORT);
 
-  setTimeout(shouldUpdateEmail, 3000);
+  setTimeout(shouldUpdateEmail, 10000);
 });
