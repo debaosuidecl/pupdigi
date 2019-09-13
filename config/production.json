@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://deba123:clemento@devconnector-ekky8.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken",
+  "githubClientId": "27c83f036dee7081176c",
+  "githubSecret": "b8e685b5d41b6d8756b1d3933ad32b768326033d"
+}
