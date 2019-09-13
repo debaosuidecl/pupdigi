@@ -91,7 +91,7 @@ const proxies = [
   10904
 ];
 
-const NUM_BROWSERS = 6;
+const NUM_BROWSERS = 10;
 const NUM_PAGES = 1;
 // get randomized indexes with shuffle
 
@@ -625,7 +625,7 @@ const shouldUpdateEmail = async () => {
   try {
     const emailLength = await UserData.countDocuments({});
     console.log(emailLength, 'this is the email length');
-    if (emailLength < 6) {
+    if (emailLength < 20) {
       await myFunc();
     } else {
       console.log('safe');
