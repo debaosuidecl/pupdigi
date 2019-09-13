@@ -151,8 +151,8 @@ const myFunc = async () => {
             args: [
               `-no-sandbox`,
 
-              '-disable-setuid-sandbox'
-              // `--proxy-server=${oldProxyUrl}`
+              '-disable-setuid-sandbox',
+              `--proxy-server=${oldProxyUrl}`
             ],
             slowMo: 70
           });
