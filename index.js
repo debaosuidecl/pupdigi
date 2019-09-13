@@ -144,7 +144,7 @@ const myFunc = async () => {
 
           console.log(proxies[shuffler[numBrowser]]);
           const browser = await puppeteer.launch({
-            headless: false,
+            headless: true,
             // slowMo: 100,
             ignoreHTTPSErrors: true,
             ignoreDefaultArgs: ['--enable-automation'],
