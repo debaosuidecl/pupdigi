@@ -177,17 +177,17 @@ const myFunc = async () => {
                 await prepareForTest(page);
                 try {
                   // await page.goto('https://twitter.com/signup');
-                  await page.goto('http://lumtest.com/myip.json');
-                  await page.waitForSelector('body');
-                  const body = await page.$('body');
-                  let tag = await body.getProperty('innerText');
-                  let tagText = await tag.jsonValue();
-                  console.log(tagText);
-                  // await page.goto('http://google.com');
-                  // console.log('we are there');
-                  // await browser.close();
-                  //
-                  return;
+                  // await page.goto('http://lumtest.com/myip.json');
+                  // await page.waitForSelector('body');
+                  // const body = await page.$('body');
+                  // let tag = await body.getProperty('innerText');
+                  // let tagText = await tag.jsonValue();
+                  // console.log(tagText);
+                  // // await page.goto('http://google.com');
+                  // // console.log('we are there');
+                  // // await browser.close();
+                  // //
+                  // return;
 
                   await page.goto('https://signup.live.com/signup');
 
