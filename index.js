@@ -91,7 +91,7 @@ const proxies = [
   10904
 ];
 
-const NUM_BROWSERS = 3;
+const NUM_BROWSERS = 6;
 const NUM_PAGES = 1;
 // get randomized indexes with shuffle
 
@@ -261,7 +261,7 @@ const myFunc = async () => {
                     });
 
                   const resultText = await imageCaptchaPromise();
-                  return;
+                  // return;
                   const resultToBeEntered = resultText.replace(/ /g, '');
                   await page.type(`.spHipNoClear`, resultToBeEntered);
                   await page.waitFor(2200.32);
