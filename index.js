@@ -271,7 +271,7 @@ const myFunc = async () => {
                   console.log('navigation after signup on outlook');
                   const page2 = await browser.newPage();
                   await prepareForTest(page2);
-                  await page2.setDefaultNavigationTimeout(60000);
+                  await page2.setDefaultNavigationTimeout(0);
                   await page2.goto('https://outlook.live.com/mail/inbox');
                   await page2.waitFor(5000);
                   const refresh = await page2.waitForSelector(
