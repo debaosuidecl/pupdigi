@@ -242,6 +242,7 @@ const myFunc = async () => {
                             console.log('starting verification');
                             if (err) {
                               console.error('please try again', err);
+                              browser.close();
                             }
                             if (!result) throw err;
                             if (result.text) {
@@ -271,7 +272,7 @@ const myFunc = async () => {
                   console.log('navigation after signup on outlook');
                   const page2 = await browser.newPage();
                   await prepareForTest(page2);
-                  await page2.setDefaultNavigationTimeout(0);
+                  await page2.setDefaultNavigationTimeout(200000);
                   await page2.goto('https://outlook.live.com/mail/inbox');
                   await page2.waitFor(5000);
                   const refresh = await page2.waitForSelector(
@@ -280,6 +281,7 @@ const myFunc = async () => {
 
                   if (refresh) {
                     await page2.click('.refreshPageButton');
+                    console.log('clicked on refresh');
                   }
 
                   await page2.waitForNavigation();
