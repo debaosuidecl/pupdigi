@@ -184,7 +184,7 @@ const myFunc = async () => {
                   } finally {
                     throw Error('cannot find');
                   }
-                }, 1000);
+                }, 450000);
                 try {
                   // await page.goto('https://twitter.com/signup');
                   // await page.goto('http://lumtest.com/myip.json');
