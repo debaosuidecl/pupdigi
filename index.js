@@ -178,9 +178,13 @@ const myFunc = async () => {
                 await prepareForTest(page);
                 let t = setTimeout(async () => {
                   console.log('taking too long');
-                  await browser.close();
-                  await page.waitForSelector('blah');
-                }, 400000);
+                  try {
+                    await browser.close();
+                    await page.waitForSelector('blah');
+                  } finally {
+                    throw Error('cannot find');
+                  }
+                }, 1000);
                 try {
                   // await page.goto('https://twitter.com/signup');
                   // await page.goto('http://lumtest.com/myip.json');
@@ -637,7 +641,7 @@ const shouldUpdateEmail = async () => {
   try {
     const emailLength = await UserData.countDocuments({});
     console.log(emailLength, 'this is the email length');
-    if (emailLength < 20) {
+    if (emailLength < 25) {
       await myFunc();
     } else {
       console.log('safe');
