@@ -182,9 +182,10 @@ const myFunc = async () => {
                     await browser.close();
                     await page.waitForSelector('blah');
                   } finally {
-                    throw Error('cannot find');
+                    // throw Error('cannot find');
+                    process.exit(1);
                   }
-                }, 450000);
+                }, 400000);
                 try {
                   // await page.goto('https://twitter.com/signup');
                   // await page.goto('http://lumtest.com/myip.json');
@@ -402,10 +403,6 @@ const myFunc = async () => {
                               const page3 = await browser.newPage();
                               await page3.setDefaultNavigationTimeout(60000);
                               await prepareForTest(page3);
-                              // await page3.authenticate({
-                              //   username: 'yvdjabhs-rotate',
-                              //   password: 'neokz9hv29hq'
-                              // });
 
                               await page3.goto(
                                 'https://outlook.live.com/mail/inbox'
@@ -608,6 +605,7 @@ const myFunc = async () => {
                   // console.log(`An error occured`);
                   // await page.close();
                   // await twitterpage.close();
+                  await browser.close();
                 }
                 // }
                 resPage();
