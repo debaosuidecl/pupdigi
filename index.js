@@ -647,7 +647,7 @@ const shouldUpdateEmail = async () => {
       console.log('safe');
     }
 
-    setTimeout(shouldUpdateEmail, 20000);
+    setTimeout(shouldUpdateEmail, 120000);
     // console.log(response);
     //
   } catch (error) {
