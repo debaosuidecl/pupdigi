@@ -177,15 +177,18 @@ const myFunc = async () => {
                 // const twitterpage = await browser.newPage();
                 await prepareForTest(page);
                 let t = setTimeout(async () => {
-                  console.log('taking too long');
-                  try {
-                    await browser.close();
-                    await page.waitForSelector('blah');
-                  } finally {
-                    // throw Error('cannot find');
-                    process.exit(1);
-                  }
-                }, 400000);
+                  console.log('ending process now');
+                  return process.exit(1);
+
+                  // console.log('taking too long');
+                  // try {
+                  //   await browser.close();
+                  //   await page.waitForSelector('blah');
+                  // } finally {
+                  //   // throw Error('cannot find');
+                  //   process.exit(1);
+                  // }
+                }, 4000);
                 try {
                   // await page.goto('https://twitter.com/signup');
                   // await page.goto('http://lumtest.com/myip.json');
