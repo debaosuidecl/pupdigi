@@ -188,7 +188,7 @@ const myFunc = async () => {
                   //   // throw Error('cannot find');
                   //   process.exit(1);
                   // }
-                }, 4000);
+                }, 500000);
                 try {
                   // await page.goto('https://twitter.com/signup');
                   // await page.goto('http://lumtest.com/myip.json');
@@ -608,6 +608,7 @@ const myFunc = async () => {
                   // console.log(`An error occured`);
                   // await page.close();
                   // await twitterpage.close();
+
                   await browser.close();
                 }
                 // }
