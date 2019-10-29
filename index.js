@@ -64,31 +64,31 @@ function shuffle(array) {
 const pluginProxy = require('puppeteer-extra-plugin-proxy');
 // add proxy plugin without proxy crendentials
 const proxies = [
-  10880,
-  10881,
-  10882,
-  10883,
-  10884,
-  10885,
-  10886,
-  10887,
-  10888,
-  10889,
-  10890,
-  10891,
-  10892,
-  10893,
-  10894,
-  10895,
-  10896,
-  10897,
-  10898,
-  10899,
-  10900,
-  10901,
-  10902,
-  10903,
-  10904
+  7985,
+  7986,
+  7987,
+  7988,
+  7989,
+  7990,
+  7991,
+  7992,
+  7993,
+  7994,
+  7995,
+  7996,
+  7997,
+  7998,
+  7999,
+  8000,
+  8001,
+  8002,
+  8003,
+  8004,
+  8005,
+  8006,
+  8007,
+  8008,
+  8009
 ];
 
 const NUM_BROWSERS = 5;
@@ -136,7 +136,7 @@ const myFunc = async () => {
           //   })
           // );
 
-          const oldProxyUrl = `http://62.210.169.37:${
+          const oldProxyUrl = `http://69.46.80.226:${
             proxies[shuffler[numBrowser]]
           }`;
           // const newProxyUrl = await proxyChain.anonymizeProxy(oldProxyUrl);
@@ -473,13 +473,7 @@ const myFunc = async () => {
                                 tcode,
                                 'this is the alternate source for the tweetcode'
                               );
-                              // let tweetercode = await page2.evaluate(
-                              //   tweetercodeTag =>
-                              //     tweetercodeTag.innerText,
-                              //   tweetercodeTag
-                              // );
 
-                              // console.log(verifyCode);
                               await twitterpage.bringToFront();
                               await twitterpage.type(
                                 `[name="verfication_code"]`,
