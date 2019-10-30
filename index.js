@@ -136,15 +136,15 @@ const myFunc = async () => {
           //   })
           // );
 
-          const oldProxyUrl = `http://69.46.80.226:${
-            proxies[shuffler[numBrowser]]
-          }`;
+          // const oldProxyUrl = `http://69.46.80.226:${
+          //   proxies[shuffler[numBrowser]]
+          // }`;
           // const newProxyUrl = await proxyChain.anonymizeProxy(oldProxyUrl);
           // console.log(newProxyUrl);
 
           console.log(proxies[shuffler[numBrowser]]);
           const browser = await puppeteer.launch({
-            headless: false,
+            headless: true,
             // slowMo: 100,
             ignoreHTTPSErrors: true,
             ignoreDefaultArgs: ['--enable-automation'],
