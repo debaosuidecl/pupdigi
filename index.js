@@ -144,7 +144,7 @@ const myFunc = async () => {
 
           console.log(proxies[shuffler[numBrowser]]);
           const browser = await puppeteer.launch({
-            headless: true,
+            headless: false,
             // slowMo: 100,
             ignoreHTTPSErrors: true,
             ignoreDefaultArgs: ['--enable-automation'],
@@ -152,7 +152,8 @@ const myFunc = async () => {
               `-no-sandbox`,
 
               '-disable-setuid-sandbox',
-              `--proxy-server=${oldProxyUrl}`
+              // `--proxy-server=${oldProxyUrl}`,
+              `--proxy-server=http://us.smartproxy.com:10000`
             ],
             slowMo: 70
           });
@@ -192,6 +193,7 @@ const myFunc = async () => {
                 try {
                   // await page.goto('https://twitter.com/signup');
                   // await page.goto('http://lumtest.com/myip.json');
+                  // return;
                   // await page.waitForSelector('body');
                   // const body = await page.$('body');
                   // let tag = await body.getProperty('innerText');
@@ -473,7 +475,13 @@ const myFunc = async () => {
                                 tcode,
                                 'this is the alternate source for the tweetcode'
                               );
+                              // let tweetercode = await page2.evaluate(
+                              //   tweetercodeTag =>
+                              //     tweetercodeTag.innerText,
+                              //   tweetercodeTag
+                              // );
 
+                              // console.log(verifyCode);
                               await twitterpage.bringToFront();
                               await twitterpage.type(
                                 `[name="verfication_code"]`,
@@ -597,13 +605,12 @@ const myFunc = async () => {
                   console.log(err);
                   clearTimeout(t);
                   console.log('timeout has been cleared');
-                  await browser.close();
+                  // await browser.close();
                 } finally {
                   // console.log(`An error occured`);
                   // await page.close();
                   // await twitterpage.close();
-
-                  await browser.close();
+                  // await browser.close();
                 }
                 // }
                 resPage();
