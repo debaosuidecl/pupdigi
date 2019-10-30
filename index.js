@@ -64,31 +64,31 @@ function shuffle(array) {
 const pluginProxy = require('puppeteer-extra-plugin-proxy');
 // add proxy plugin without proxy crendentials
 const proxies = [
-  7985,
-  7986,
-  7987,
-  7988,
-  7989,
-  7990,
-  7991,
-  7992,
-  7993,
-  7994,
-  7995,
-  7996,
-  7997,
-  7998,
-  7999,
-  8000,
-  8001,
-  8002,
-  8003,
-  8004,
-  8005,
-  8006,
-  8007,
-  8008,
-  8009
+  9463,
+  9464,
+  9465,
+  9466,
+  9467,
+  9468,
+  9469,
+  9470,
+  9471,
+  9472,
+  9473,
+  9474,
+  9475,
+  9476,
+  9477,
+  9478,
+  9479,
+  9480,
+  9481,
+  9482,
+  9483,
+  9484,
+  9485,
+  9486,
+  9487
 ];
 
 const NUM_BROWSERS = 5;
@@ -136,9 +136,9 @@ const myFunc = async () => {
           //   })
           // );
 
-          // const oldProxyUrl = `http://69.46.80.226:${
-          //   proxies[shuffler[numBrowser]]
-          // }`;
+          const oldProxyUrl = `http://62.210.169.25:${
+            proxies[shuffler[numBrowser]]
+          }`;
           // const newProxyUrl = await proxyChain.anonymizeProxy(oldProxyUrl);
           // console.log(newProxyUrl);
 
@@ -152,8 +152,8 @@ const myFunc = async () => {
               `-no-sandbox`,
 
               '-disable-setuid-sandbox',
-              // `--proxy-server=${oldProxyUrl}`,
-              `--proxy-server=http://us.smartproxy.com:10000`
+              `--proxy-server=${oldProxyUrl}`
+              // `--proxy-server=http://us.smartproxy.com:10000`
             ],
             slowMo: 70
           });
@@ -180,19 +180,10 @@ const myFunc = async () => {
                 let t = setTimeout(async () => {
                   console.log('ending process now');
                   return process.exit(1);
-
-                  // console.log('taking too long');
-                  // try {
-                  //   await browser.close();
-                  //   await page.waitForSelector('blah');
-                  // } finally {
-                  //   // throw Error('cannot find');
-                  //   process.exit(1);
-                  // }
                 }, 500000);
                 try {
                   // await page.goto('https://twitter.com/signup');
-                  // await page.goto('http://lumtest.com/myip.json');
+                  // await page.goto('https://lumtest.com/myip.json');
                   // return;
                   // await page.waitForSelector('body');
                   // const body = await page.$('body');
