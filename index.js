@@ -64,31 +64,31 @@ function shuffle(array) {
 const pluginProxy = require('puppeteer-extra-plugin-proxy');
 // add proxy plugin without proxy crendentials
 const proxies = [
-  9463,
-  9464,
-  9465,
-  9466,
-  9467,
-  9468,
-  9469,
-  9470,
-  9471,
-  9472,
-  9473,
-  9474,
-  9475,
-  9476,
-  9477,
-  9478,
-  9479,
-  9480,
-  9481,
-  9482,
-  9483,
-  9484,
-  9485,
-  9486,
-  9487
+  1111,
+  1112,
+  1113,
+  1114,
+  1115,
+  1116,
+  1117,
+  1118,
+  1119,
+  1120,
+  1121,
+  1122,
+  1123,
+  1124,
+  1125,
+  1126,
+  1127,
+  1128,
+  1129,
+  1130,
+  1131,
+  1132,
+  1133,
+  1134,
+  1135
 ];
 
 const NUM_BROWSERS = 5;
@@ -136,7 +136,7 @@ const myFunc = async () => {
           //   })
           // );
 
-          const oldProxyUrl = `http://62.210.169.25:${
+          const oldProxyUrl = `http://195.154.161.11:${
             proxies[shuffler[numBrowser]]
           }`;
           // const newProxyUrl = await proxyChain.anonymizeProxy(oldProxyUrl);
