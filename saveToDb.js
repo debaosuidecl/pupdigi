@@ -20,11 +20,23 @@ const saveToDbPhone = async row => {
   }
 };
 const savePhones = () => {
-  fs.createReadStream('Verizon.csv')
+  let i = 1;
+  fs.createReadStream('VerizonNew.csv')
     .pipe(csv())
     .on('data', async row => {
-      await saveToDbPhone(row);
+      // await saveToDbPhone(row);
       // setTimeout(() => saveToDbPhone(row), 1000);
+      // console.log(row);
+      if (i < 858411) {
+        console.log('no', i);
+      } else {
+        console.log('transfer');
+        await fsExtra.appendFile(
+          'VerizonNew.csv',
+          `"${row['Phone']}","${row['FirstName']}",${row['TimeZone']},${row['Gender']}\n`
+        );
+      }
+      i++;
     })
     .on('end', () => {
       console.log('CSV file successfully processed');
