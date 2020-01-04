@@ -24,7 +24,7 @@ const savePhones = () => {
     .pipe(csv())
     .on('data', async row => {
       // await saveToDbPhone(row)\
-      setTimeout(saveToDbPhone, 1000);
+      setTimeout(() => saveToDbPhone(row), 1000);
     })
     .on('end', () => {
       console.log('CSV file successfully processed');
