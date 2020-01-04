@@ -23,8 +23,8 @@ const savePhones = () => {
   fs.createReadStream('Verizon.csv')
     .pipe(csv())
     .on('data', async row => {
-      // await saveToDbPhone(row)\
-      setTimeout(() => saveToDbPhone(row), 1000);
+      await saveToDbPhone(row);
+      // setTimeout(() => saveToDbPhone(row), 1000);
     })
     .on('end', () => {
       console.log('CSV file successfully processed');
