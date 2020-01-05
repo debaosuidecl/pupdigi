@@ -292,7 +292,7 @@ const shouldUpdateEmail = async () => {
   }
 };
 
-let PORT = 92000;
+let PORT = 9999;
 connectDB();
 app.listen(PORT, () => {
   console.log('listening on PORT ', PORT);
