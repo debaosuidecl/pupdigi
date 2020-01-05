@@ -5,8 +5,8 @@ const mongoose = require('mongoose');
 const PhoneReal = new mongoose.Schema({
   phone: {
     type: String,
-    required: true
-    // unique: true
+    required: true,
+    unique: true
   }
 });
 
