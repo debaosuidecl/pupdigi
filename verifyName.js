@@ -7,6 +7,7 @@ const proxyChain = require('proxy-chain');
 const express = require('express');
 const app = express();
 const Phones = require('./model/PhoneReal');
+const Actual = require('./model/Actual');
 const mongoose = require('mongoose');
 const connectDB = require('./config/db.js');
 const puppeteer = require('puppeteer-extra');
@@ -198,6 +199,12 @@ const myFunc = async phones => {
                       element
                     );
                     console.log(text);
+                    const newActual = new Actual({
+                      phone: textToWrite,
+                      name: text
+                    });
+                    await newActual.save();
+                    console.log('saved ', text, ' in actual');
                   } catch (error) {
                     console.log('was not a link');
                     await page.waitForSelector(`.LargeName span`);
