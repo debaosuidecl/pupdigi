@@ -1,3 +1,9 @@
+// const request = require('request-promise-native');
+// const poll = require('promise-poller').default;
+// const proxyChain = require('proxy-chain');
+// const tweeting = require('./tweeting');
+const proxyChain = require('proxy-chain');
+
 const express = require('express');
 const app = express();
 const Phones = require('./model/PhoneReal');
@@ -7,10 +13,25 @@ const connectDB = require('./config/db.js');
 const puppeteer = require('puppeteer-extra');
 // const puppeteerExtra = require('puppeteer-extra');
 //
+const axios = require('axios');
+const solver = require('2captcha');
+const requestToExternal = require('request');
+const fs = require('fs');
+const apiKey = '4fb64740ffa4b745aa944719725acafa';
+const randomstring = require('randomstring');
+const randomName = require('random-name');
+const randomDayGen = require('random-day');
+const randomMonthGen = require('random-month');
+const randomYearGen = require('random-year');
+var random_useragent = require('random-useragent');
 var USER_AGENT = random_useragent.getRandom(function(ua) {
   return parseFloat(ua.browserVersion) >= 50 && ua.osName == 'Windows';
 });
 console.log(USER_AGENT, 'USER');
+
+const returnRandom = () => {
+  return Math.floor(Math.random() * 7000) + 3000;
+};
 
 const prepareForTest = async page => {
   await page.setUserAgent(
