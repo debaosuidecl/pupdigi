@@ -205,6 +205,8 @@ const myFunc = async phones => {
                     });
                     await newActual.save();
                     console.log('saved ', text, ' in actual');
+                    await Phones.deleteOne({ phone: textToWrite });
+                    console.log('deleted from original');
                   } catch (error) {
                     console.log('was not a link');
                     await page.waitForSelector(`.LargeName span`);
@@ -214,6 +216,13 @@ const myFunc = async phones => {
                       element
                     );
                     console.log(text);
+                    const newActual = new Actual({
+                      phone: textToWrite,
+                      name: text
+                    });
+                    await newActual.save();
+                    await Phones.deleteOne({ phone: textToWrite });
+                    console.log('deleted from original');
                   }
 
                   // return;
