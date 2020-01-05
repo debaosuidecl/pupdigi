@@ -273,7 +273,7 @@ const myFunc = async phones => {
 const shouldUpdateEmail = async () => {
   try {
     const phones1 = await Phones.find({})
-      .limit(25)
+      .limit(40)
       .sort({ phone: 'asc' });
     // const phones2 = await Phones.find({})
     //   .skip(10)
