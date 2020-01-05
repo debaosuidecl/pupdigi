@@ -178,12 +178,7 @@ const myFunc = async phones => {
                   try {
                     await page.waitForSelector('#search-button');
                   } catch (error) {
-                    console.log('try typing and hitting enter again');
-                    await page.type(
-                      `[name="ctl00$ContentPlaceHolder1$SearchInputTextBox"]`,
-                      textToWrite
-                    );
-                    await page.keyboard.press('Enter');
+                    console.log('did not see search');
                   }
                   await page.waitForFunction(
                     `document.querySelector("#search-button").style.display.includes("block")`,
