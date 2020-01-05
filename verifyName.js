@@ -272,10 +272,12 @@ const myFunc = async phones => {
 
 const shouldUpdateEmail = async () => {
   try {
-    const phones1 = await Phones.find({}).limit(20);
-    const phones2 = await Phones.find({})
-      .skip(10)
-      .limit(10);
+    const phones1 = await Phones.find({})
+      .limit(25)
+      .sort({ phone: 'asc' });
+    // const phones2 = await Phones.find({})
+    //   .skip(10)
+    //   .limit(10);
     // console.log(emailLength.len, 'this is the email length');
     // if (emailLength < 25) {
     console.log('searching for phones');
