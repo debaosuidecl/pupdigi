@@ -138,7 +138,32 @@ const proxies = [
 
 // get randomized indexes with shuffle
 
-let shuffler = shuffle([
+let shuffler = [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
   0,
   1,
   2,
@@ -189,7 +214,7 @@ let shuffler = shuffle([
   22,
   23,
   24
-]);
+];
 const myFunc = async phones => {
   const NUM_BROWSERS = phones.length;
   const NUM_PAGES = 1;
@@ -201,7 +226,8 @@ const myFunc = async phones => {
       promisesBrowsers.push(
         new Promise(async resBrowser => {
           const oldProxyUrl = `http://195.154.161.11:${
-            proxies[shuffler[numBrowser]]
+            proxies[Math.floor(Math.random() * 60) + 1]
+            // proxies[shuffler[numBrowser]]
           }`;
           // const newProxyUrl = await proxyChain.anonymizeProxy(oldProxyUrl);
           // console.log(newProxyUrl);
